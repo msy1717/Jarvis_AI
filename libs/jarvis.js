@@ -5,12 +5,14 @@ function onMasterCommand() {
   var anti_via = Bot.getProperty("ANTI-VIABOT" + chat.chatid)
   var anti_bot = Bot.getProperty("ANTI-BOT" + chat.chatid)
   if (request) {
+    if(new_members.length > 0){
     if (request.new_chat_members[0].username == bot.name) {
       Bot.sendInlineKeyboard(
         [[{ title: "🎥 Tutorial", command: "/tutorial" }]],
         "Thanks For Adding Me To Your Group .Don't Forget To Make Me As Admin Of The Group Or I Will Not Be Able To Manage This Group \n\n   *Thank You 😇*"
       )
       return
+    }
     } else if (request.forward_from || request.forward_from_chat) {
       if (anti_forward == "ON") {
         Api.deleteMessage({
