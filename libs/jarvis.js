@@ -36,7 +36,7 @@ function onMasterCommand() {
           message_id: request.message_id
         })
       }
-    } else if (request.new_chat_members[0].is_bot == true) {
+    } else if (request.from.is_bot == true) {
       if (anti_bot == "ON") {
         Api.kickChatMember({
           chat_id: chat.chatid,
