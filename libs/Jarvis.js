@@ -2,8 +2,7 @@ if (chat.chat_type !== "private") {
   var words = Bot.getProperty("BlockList" + chat.chatid)
   var blocklist = Bot.getProperty("BlockListStatus" + chat.chatid)
   var newUser = Bot.getProperty("WelcomeText" + chat.chatid)
-  var leftUser = Bot.getProperty("LeftText" + chat.chatid)
-
+  
   if (blocklist == "ON") {
     if (message.includes(words[1]) || message.includes(words[2]) || message.includes(words[3]) || message.includes(words[4]) || message.includes(words[5])) {
       Api.deleteMessage({
@@ -22,6 +21,6 @@ if (chat.chat_type !== "private") {
       Bot.sendMessage(WelcomeMsg)
     }
   } else if (request.left_chat_member) {
-    Bot.sendMessage(leftUser)
+    Bot.sendMessage("Nice Knowing You ,")
   }
 }
