@@ -1,4 +1,4 @@
-let LibPrefix = "JARVIS"
+let libPrefix = "JARVIS"
 
 function paste(text) {
   HTTP.post({
